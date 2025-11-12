@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Play Audio</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: white;
+        }
+        
+        .content {
+            text-align: center;
+            color: black;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .content:hover {
+            opacity: 0.7;
+        }
+
+        button {
+            display: none;
+            margin-top: 20px;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        .show-button {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="content" id="textContent">
+            hell
+        </div>
+        <button id="signInBtn" class="show-button">Sign In</button>
+    </div>
+    
+    <audio id="audioPlayer" loop>
+        <source src="gaali.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const signInBtn = document.getElementById('signInBtn');
+
+        // Play audio when clicking anywhere on the page
+        document.body.addEventListener('click', function() {
+            audioPlayer.play();
+        });
+
+        signInBtn.addEventListener('click', function() {
+            alert('Sign In clicked!');
+        });
+    </script>
+</body>
+</html>
